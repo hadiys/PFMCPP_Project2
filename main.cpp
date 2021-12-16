@@ -16,7 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
+ int
+ double
+ float
+ bool
+ char
+ unsigned int
+
  
  
  
@@ -60,9 +66,34 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int age = 25;
+    int year = 2021;
+    int numStereoChannels = 2;
+
+    double taxRate = 12.5;
+    double averageTemperature = 55.7;
+    double gpa = 3.8;
+
+    float width = 10.f;
+    float length = 30.f;
+    float peakQuality = 23.2f;
+    
+    char yes = 'y';
+    char no = 'n';
+    char assignOperator = '=';
+
+    bool isPlaying = false;
+    bool bufferFull = true;
+    bool hasInstance = true;
+
+    unsigned vectorSize = 6;
+    unsigned ipAddressFirstBit = 0;
+    unsigned ramSize = 8;
 
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(age, year, numStereoChannels, taxRate, averageTemperature, gpa, width, length, peakQuality, yes, no, assignOperator, isPlaying, bufferFull, hasInstance, vectorSize, ipAddressFirstBit, ramSize);
 }
 
 /*
@@ -76,45 +107,108 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
 
-/*
- 1)
- */
 
-/*
- 2)
- */
+ double calculateAverageOfThree(double firstVal, double secondVal, double thirdVal, int denominator = 3)
+ {
+    
+     ignoreUnused(firstVal, secondVal, thirdVal, denominator);
 
-/*
- 3)
- */
+     return {};
 
-/*
- 4)
- */
+ }
+ 
 
-/*
- 5)
- */
 
-/*
- 6)
- */
+int getEmployeeID(std::string employeeFullName, std::string department = "Product", bool isCurrentlyEmployed = true)
+ {
+     
+     ignoreUnused(employeeFullName, isCurrentlyEmployed, department);
 
-/*
- 7)
- */
+     return {};
 
-/*
- 8)
- */
+ }
+ 
 
-/*
- 9)
- */
 
-/*
- 10)
- */
+int getDrivingLicenseNum(int carRegistration, std::string driverName, int licenseType = 0)
+ {
+     
+     ignoreUnused(carRegistration, driverName, licenseType);
+
+     return {};
+
+ }
+ 
+
+void userLogin(std::string email, std::string password, bool isAdmin = false)
+ {
+     
+     ignoreUnused(email, password, isAdmin);
+
+ }
+ 
+
+
+bool bookAvailable(std::string title, std::string author, std::string borrower = "Student")
+ {
+     
+     ignoreUnused(title, author, borrower);
+
+     return {};
+ }
+ 
+
+
+std::string getPitchTransposedByFifth(char note, char accidental = ' ', int interval = 5)
+ {
+
+     ignoreUnused(note, accidental, interval);
+
+     return {};
+ }
+
+
+
+std::string getPassengerSeatNum(std::string passengerName, std::string passportNum, char flightType = 'B')
+ {
+
+     ignoreUnused(passengerName, passportNum, flightType);
+
+     return {};
+
+ }
+
+
+
+char getPitchByScaleDegree(int degree, std::string scale = "Major")
+ {
+
+     ignoreUnused(degree, scale);
+
+     return {};
+
+ }
+
+
+
+void makeCoffeeOrder(char coffeeType = 'E', double price = 3.0)
+ {
+
+     ignoreUnused(coffeeType, price);
+
+ }
+
+
+
+float averageYearlyFuelPriceByCountry(std::string country, int year = 2021, char fuelType = 'G')
+ {
+
+     ignoreUnused(country, year, fuelType);
+
+     return {};
+     
+ }
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -135,28 +229,28 @@ int main()
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
     
-    //1)
+    auto averageScores = calculateAverageOfThree(12.5, 65.9, 81.0);
     
-    //2)
+    auto employeeID = getEmployeeID("John Appleseed");
     
-    //3)
+    auto licenseNum = getDrivingLicenseNum(567456, "Dom Torretto");
+
+    userLogin("replitUser@mail.com", "strongPassword");
     
-    //4)
+    auto bookCheckedOut = bookAvailable("The Catcher In The Rye", "J.D Salinger");
     
-    //5)
+    auto myTransposedNote = getPitchTransposedByFifth('F');
     
-    //6)
+    auto flightSeatNum = getPassengerSeatNum("Hadi", "P123456");
     
-    //7)
+    auto myNote = getPitchByScaleDegree(3);
     
-    //8)
+    makeCoffeeOrder();
     
-    //9)
-    
-    //10)
+    auto irelandAvgFuelPrice = averageYearlyFuelPriceByCountry("Ireland", 2021);
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, carRented, averageScores, employeeID, licenseNum, bookCheckedOut, myTransposedNote, flightSeatNum, myNote, irelandAvgFuelPrice);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
