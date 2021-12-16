@@ -91,9 +91,9 @@ void variableDeclarations()
     unsigned ramSize = 8;
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, age, year, numStereoChannels, taxRate, averageTemperature, gpa, width, length, peakQuality, yes, no, assignOperator, isPlaying, bufferFull, hasInstance, vectorSize, ipAddressFirstBit, ramSize); //passing each variable declared to the ignoreUnused() function
 
-    ignoreUnused(age, year, numStereoChannels, taxRate, averageTemperature, gpa, width, length, peakQuality, yes, no, assignOperator, isPlaying, bufferFull, hasInstance, vectorSize, ipAddressFirstBit, ramSize);
+
 }
 
 /*
@@ -108,106 +108,80 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 } 
 
 
- double calculateAverageOfThree(double firstVal, double secondVal, double thirdVal, int denominator = 3)
- {
-    
+double calculateAverageOfThree(double firstVal, double secondVal, double thirdVal, int denominator = 3)
+{
      ignoreUnused(firstVal, secondVal, thirdVal, denominator);
-
      return {};
-
- }
+}
  
 
 
 int getEmployeeID(std::string employeeFullName, std::string department = "Product", bool isCurrentlyEmployed = true)
- {
-     
+{
      ignoreUnused(employeeFullName, isCurrentlyEmployed, department);
-
      return {};
-
- }
+}
  
 
 
 int getDrivingLicenseNum(int carRegistration, std::string driverName, int licenseType = 0)
- {
-     
+{ 
      ignoreUnused(carRegistration, driverName, licenseType);
-
      return {};
-
- }
+}
  
 
 void userLogin(std::string email, std::string password, bool isAdmin = false)
- {
-     
+{
      ignoreUnused(email, password, isAdmin);
-
- }
+}
  
 
 
 bool bookAvailable(std::string title, std::string author, std::string borrower = "Student")
- {
-     
+{
      ignoreUnused(title, author, borrower);
-
      return {};
- }
+}
  
 
 
 std::string getPitchTransposedByFifth(char note, char accidental = ' ', int interval = 5)
- {
-
+{
      ignoreUnused(note, accidental, interval);
-
      return {};
- }
+}
 
 
 
 std::string getPassengerSeatNum(std::string passengerName, std::string passportNum, char flightType = 'B')
- {
-
+{
      ignoreUnused(passengerName, passportNum, flightType);
-
      return {};
-
- }
+}
 
 
 
 char getPitchByScaleDegree(int degree, std::string scale = "Major")
- {
-
+{
      ignoreUnused(degree, scale);
-
      return {};
-
- }
+}
 
 
 
 void makeCoffeeOrder(char coffeeType = 'E', double price = 3.0)
- {
-
-     ignoreUnused(coffeeType, price);
-
- }
+{
+    ignoreUnused(coffeeType, price);
+}
 
 
 
 float averageYearlyFuelPriceByCountry(std::string country, int year = 2021, char fuelType = 'G')
- {
-
+{
      ignoreUnused(country, year, fuelType);
-
      return {};
-     
- }
+}
 
 
 /*
@@ -250,7 +224,7 @@ int main()
     auto irelandAvgFuelPrice = averageYearlyFuelPriceByCountry("Ireland", 2021);
     
     
-    ignoreUnused(carRented, carRented, averageScores, employeeID, licenseNum, bookCheckedOut, myTransposedNote, flightSeatNum, myNote, irelandAvgFuelPrice);
+    ignoreUnused(carRented, averageScores, employeeID, licenseNum, bookCheckedOut, myTransposedNote, flightSeatNum, myNote, irelandAvgFuelPrice);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
